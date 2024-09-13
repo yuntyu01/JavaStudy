@@ -1,4 +1,4 @@
-package dataStructure.Queue.arrayQueue;
+package dataStructure.queue.arrayQueue;
 
 public class MyArrayQueueMain {
     public static void main(String[] args) {

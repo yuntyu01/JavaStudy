@@ -14,6 +14,10 @@ public class Shuttle <T>{
         return cart.getFirst();
     }
 
+    public <X> void boci (X t){
+
+    }
+
     public void showinfo() {
         System.out.println(cart);
     }
