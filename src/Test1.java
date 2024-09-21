@@ -1,11 +1,14 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.concurrent.*;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class Test1 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        Path path = Paths.get("c");
+
+
     }
 }
 
