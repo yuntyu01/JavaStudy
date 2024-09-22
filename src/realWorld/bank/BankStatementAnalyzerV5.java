@@ -7,9 +7,8 @@ import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
-import java.util.stream.Collectors;
 
-public class BankStatementAnalyzerV4 {
+public class BankStatementAnalyzerV5 {
     private static final String RESOURCES = "C:\\Users\\82109\\OneDrive\\.개인공부\\JavaStudy\\JavaStudy\\src\\resources\\bank-data-simple.csv";
     private static final BankStatementCSVParserV1 bankStatementParser = new BankStatementCSVParserV1();
 
@@ -17,6 +16,7 @@ public class BankStatementAnalyzerV4 {
 
         final Path path = Paths.get(RESOURCES);
         final List<String> lines = Files.readAllLines(path);
+
         final List<BankTransaction> bankTransactions = bankStatementParser.parseLinesFormCSV(lines);
 
         final BankStatementProcessor bankStatementProcessor = new BankStatementProcessor(bankTransactions);
@@ -29,6 +29,10 @@ public class BankStatementAnalyzerV4 {
         System.out.println(bankStatementDateRange.DateRangeMaxAmount(minRange, maxRange));
         System.out.println(bankStatementDateRange.DateRangeMinAmount(minRange, maxRange));
 
+        final BankStatementGrouping bankStatementGrouping = new BankStatementGrouping(bankTransactions);
+        bankStatementGrouping.groupingDate();
+        bankStatementGrouping.groupingAmount();
+        bankStatementGrouping.groupingDescription();
     }
 
     private static void collectSummary(final BankStatementProcessor bankStatementProcessor){
